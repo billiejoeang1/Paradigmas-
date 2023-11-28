@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+// Función para dividir dos números enteros usando restas sucesivas
+int dividir(int dividendo, int divisor) {
+    int cociente = 0;
+
+    while (dividendo >= divisor) {
+        dividendo -= divisor;
+        cociente++;
+    }
+
+    return cociente;
+}
+
+// Función para calcular la multiplicación de dos números usando sumas sucesivas
+int multiplicar(int multiplicando, int multiplicador) {
+    int producto = 0;
+
+    while (multiplicador > 0) {
+        producto += multiplicando;
+        multiplicador--;
+    }
+
+    return producto;
+}
+
+// Función para calcular el factorial de un número
+int factorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+int main() {
+    int num1 = 20;
+    int num2 = 4;
+
+    // División de dos números enteros usando restas sucesivas
+    int resultado_division = dividir(num1, num2);
+    printf("Resultado de dividir %d entre %d: %d\n", num1, num2, resultado_division);
+
+    // Multiplicación de dos números usando sumas sucesivas
+    int resultado_multiplicacion = multiplicar(num1, num2);
+    printf("Resultado de multiplicar %d por %d: %d\n", num1, num2, resultado_multiplicacion);
+
+    // Calcular el factorial de un número
+    int numero_factorial = 5;
+    int resultado_factorial = factorial(numero_factorial);
+    printf("Factorial de %d: %d\n", numero_factorial, resultado_factorial);
+
+    return 0;
+}
