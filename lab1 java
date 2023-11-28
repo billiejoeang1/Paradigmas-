@@ -1,0 +1,51 @@
+public class Main {
+    // Método para dividir dos números enteros usando restas sucesivas
+    public static int dividir(int dividendo, int divisor) {
+        int cociente = 0;
+
+        while (dividendo >= divisor) {
+            dividendo -= divisor;
+            cociente++;
+        }
+
+        return cociente;
+    }
+
+    // Método para calcular la multiplicación de dos números usando sumas sucesivas
+    public static int multiplicar(int multiplicando, int multiplicador) {
+        int producto = 0;
+
+        while (multiplicador > 0) {
+            producto += multiplicando;
+            multiplicador--;
+        }
+
+        return producto;
+    }
+
+    // Método para calcular el factorial de un número
+    public static int factorial(int n) {
+        if (n == 0 || n == 1)
+            return 1;
+        else
+            return n * factorial(n - 1);
+    }
+
+    public static void main(String[] args) {
+        int num1 = 20;
+        int num2 = 4;
+
+        // División de dos números enteros usando restas sucesivas
+        int resultado_division = dividir(num1, num2);
+        System.out.println("Resultado de dividir " + num1 + " entre " + num2 + ": " + resultado_division);
+
+        // Multiplicación de dos números usando sumas sucesivas
+        int resultado_multiplicacion = multiplicar(num1, num2);
+        System.out.println("Resultado de multiplicar " + num1 + " por " + num2 + ": " + resultado_multiplicacion);
+
+        // Calcular el factorial de un número
+        int numero_factorial = 5;
+        int resultado_factorial = factorial(numero_factorial);
+        System.out.println("Factorial de " + numero_factorial + ": " + resultado_factorial);
+    }
+}
