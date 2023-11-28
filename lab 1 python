@@ -1,0 +1,43 @@
+# Función para dividir dos números enteros usando restas sucesivas
+def dividir(dividendo, divisor):
+    cociente = 0
+
+    while dividendo >= divisor:
+        dividendo -= divisor
+        cociente += 1
+
+    return cociente
+
+# Función para calcular la multiplicación de dos números usando sumas sucesivas
+def multiplicar(multiplicando, multiplicador):
+    producto = 0
+
+    while multiplicador > 0:
+        producto += multiplicando
+        multiplicador -= 1
+
+    return producto
+
+# Función para calcular el factorial de un número
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+# Ejemplo de uso de las funciones
+num1 = 20
+num2 = 4
+
+# División de dos números enteros usando restas sucesivas
+resultado_division = dividir(num1, num2)
+print(f"Resultado de dividir {num1} entre {num2}: {resultado_division}")
+
+# Multiplicación de dos números usando sumas sucesivas
+resultado_multiplicacion = multiplicar(num1, num2)
+print(f"Resultado de multiplicar {num1} por {num2}: {resultado_multiplicacion}")
+
+# Calcular el factorial de un número
+numero_factorial = 5
+resultado_factorial = factorial(numero_factorial)
+print(f"Factorial de {numero_factorial}: {resultado_factorial}")
